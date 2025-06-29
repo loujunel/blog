@@ -11,7 +11,7 @@ const nextConfig: NextConfig = {
   // Since we're hosting at https://loujunel.github.io/blog,
   // ensure links and assets are prefixed correctly.
   basePath: '/blog',
-  assetPrefix: '/blog/',
+  assetPrefix: '/blog',
 
   // Disable image optimization for static export
   images: {

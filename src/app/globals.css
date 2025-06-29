@@ -1,4 +1,4 @@
-/* Force new hash - CSS styles for Lou Blog */
+/* Force new hash - CSS styles for Lou Blog - Updated for GitHub Pages - Final Fix */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -18,4 +18,9 @@ body {
   background-color: var(--color-background);
   color: var(--color-foreground);
   transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+/* Additional styles to ensure proper rendering */
+html {
+  scroll-behavior: smooth;
 }
