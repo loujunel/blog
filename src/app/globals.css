@@ -1,6 +1,9 @@
-@import "tailwindcss";
+/* Force new hash - CSS styles for Lou Blog */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme {
+:root {
   --color-background: #ffffff;
   --color-foreground: #171717;
 }

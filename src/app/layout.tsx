@@ -1,11 +1,15 @@
 /* src/app/layout.tsx */
 
 'use client';
-import { useState, useEffect, ReactNode } from 'react';
 import './globals.css';
+import { useState, useEffect, ReactNode } from 'react';
 import { Sun, Moon, Volume2, VolumeX } from 'lucide-react';
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
   const [darkMode, setDarkMode] = useState(false);
   const [muted, setMuted] = useState(true);
 
@@ -43,35 +47,37 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <title>Lou Blog</title>
         <meta name="description" content="A site-within-a-site portfolio and blog" />
       </head>
-      <body className="min-h-screen transition-all duration-500 ease-in-out">
-        {/* Control buttons */}
-        <div className="fixed top-4 left-4 flex space-x-2 z-50">
-          <button
-            onClick={toggleDark}
-            aria-label="Toggle dark mode"
-            className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-all duration-300 ease-in-out transform hover:scale-110 active:scale-95 shadow-lg hover:shadow-xl"
-          >
-            <div className="transition-transform duration-300 ease-in-out">
-              {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-            </div>
-          </button>
-          <button
-            onClick={toggleMute}
-            aria-label="Toggle audio mute"
-            className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-all duration-300 ease-in-out transform hover:scale-110 active:scale-95 shadow-lg hover:shadow-xl"
-          >
-            <div className="transition-transform duration-300 ease-in-out">
-              {muted ? <Volume2 size={20} /> : <VolumeX size={20} />}
-            </div>
-          </button>
-        </div>
-
-        {/* Page content */}
-        <main className="flex items-center justify-center min-h-screen transition-all duration-500 ease-in-out">
-          <div className="w-full max-w-3xl p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg transition-all duration-500 ease-in-out">
-            {children}
+      <body>
+        <div className="min-h-screen transition-all duration-500 ease-in-out">
+          {/* Control buttons */}
+          <div className="fixed top-4 left-4 flex space-x-2 z-50">
+            <button
+              onClick={toggleDark}
+              aria-label="Toggle dark mode"
+              className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-all duration-300 ease-in-out transform hover:scale-110 active:scale-95 shadow-lg hover:shadow-xl"
+            >
+              <div className="transition-transform duration-300 ease-in-out">
+                {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+              </div>
+            </button>
+            <button
+              onClick={toggleMute}
+              aria-label="Toggle audio mute"
+              className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-all duration-300 ease-in-out transform hover:scale-110 active:scale-95 shadow-lg hover:shadow-xl"
+            >
+              <div className="transition-transform duration-300 ease-in-out">
+                {muted ? <Volume2 size={20} /> : <VolumeX size={20} />}
+              </div>
+            </button>
           </div>
-        </main>
+
+          {/* Page content */}
+          <main className="flex items-center justify-center min-h-screen transition-all duration-500 ease-in-out">
+            <div className="w-full max-w-3xl p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg transition-all duration-500 ease-in-out">
+              {children}
+            </div>
+          </main>
+        </div>
       </body>
     </html>
   );
